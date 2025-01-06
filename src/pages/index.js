@@ -1,0 +1,6 @@
+export { default as Home } from "./Home"
+export { default as About } from "./About"
+export { default as Add } from "./agenda/Add"
+export { default as Edit } from "./agenda/Edit"
+export { default as Agendas } from "./Agendas"
+export { default as Chat } from "./admin/Chat"
