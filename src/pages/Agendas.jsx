@@ -36,7 +36,7 @@ const dateDisplay = (date) => {
       </div>
       {items.length > 0 ? (
         <ul className="space-y-4">
-          {items.map((item, index) => (
+          {items.sort((a,b)=>a.status<b.status).map((item, index) => (
             <li
               key={index}
               className={"p-4 border border-gray-300 rounded-md shadow-sm hover:shadow-md hover:border-blue-500 transition"+(item.status === "Completed"
@@ -54,13 +54,13 @@ const dateDisplay = (date) => {
               <div className="flex flex-col items-center justify-center gap-2">
                 {item.status !== 'Completed' && (<a
                   href={"/agenda/edit/" + item.id}
-                  className="mr-2 px-3 py-1 bg-yellow-500 text-white text-sm rounded-md hover:bg-yellow-600 focus:outline-none"
+                  className="w-20 px-3 py-1 bg-yellow-500 text-white text-sm rounded-md hover:bg-yellow-600 focus:outline-none text-center"
                 >
                   Edit
                 </a>)}
                 <button
                   onClick={()=>handleDelete(item.id)}
-                  className="px-3 py-1 bg-red-500 text-white text-sm rounded-md hover:bg-red-600 focus:outline-none"
+                  className="w-20 px-3 py-1 bg-red-500 text-white text-sm rounded-md hover:bg-red-600 focus:outline-none"
                 >
                   Delete
                 </button>
@@ -68,7 +68,7 @@ const dateDisplay = (date) => {
               </div>
               <span
                 className={
-                  "inline-block px-3 py-1 text-sm text-white rounded-md font-bold " +
+                  "w-24 text-center inline-block px-3 py-1 text-sm text-white rounded-md font-bold " +
                   (item.status === "Completed"
                     ? " bg-green-500"
                     : " bg-blue-500")

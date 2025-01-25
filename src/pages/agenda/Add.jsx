@@ -40,7 +40,7 @@ const Add = () => {
   };
 
   return (
-    <div className="w-full h-[100vh] flex flex-col justify-center items-center">
+    <>
       {message && (<div>
         {message}
       </div>)}
@@ -50,7 +50,7 @@ const Add = () => {
       </div>
       <form
         onSubmit={handleSubmit}
-        className="w-1/2 mx-auto p-4 bg-white shadow-md rounded-md space-y-4"
+        className="w-full p-4 bg-white shadow-md rounded-md space-y-4"
       >
         {/* Title Input */}
         <div>
@@ -119,26 +119,30 @@ const Add = () => {
           >
             Status
           </label>
-          <div className="radio-group flex">
+          <div className="radio-group flex justify-around">
+            <div className="flex gap-4">
             <input
               type="radio"
               id="status"
               name="status"
               value="Pending"
               onChange={handleChange}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               checked
             />{" "}
             Pending
+            </div>
+            <div className="flex gap-4">
             <input
               type="radio"
               id="status"
               name="status"
               value="Completed"
               onChange={handleChange}
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             />{" "}
             Completed
+            </div>
           </div>
         </div>
 
@@ -167,7 +171,7 @@ const Add = () => {
           Tambahkan
         </button>
       </form>
-    </div>
+    </>
   );
 };
 
